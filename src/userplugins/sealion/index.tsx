@@ -23,11 +23,6 @@ const imgStyle = {
 };
 
 function Sealion() {
-    const audioRefCallback = useCallback((node) => {
-    if (node !== null) {
-      node.volume = 0.25;
-    }
-  },[]);
     const [render, setRender] = useState(false);
     console.log("sealion rendered");
     useEffect(() => {
@@ -46,7 +41,7 @@ function Sealion() {
     return render ?
         <div style={{ ...divStyle }}>
             <img src={IMAGE} style={imgStyle as any} />
-            <audio autoPlay src={AUDIO} style={{ display: "none" }} ref={audioRefCallback}/>
+            <audio autoPlay src={AUDIO} style={{ display: "none" }} ref={(node)=>{node.volume=0.25;}}/>
         </div> : null;
 }
 
