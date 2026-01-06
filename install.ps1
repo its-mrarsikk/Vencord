@@ -22,6 +22,7 @@ if (Test-Path "Vencord") { Remove-Item -Recurse -Force "Vencord" }
 git clone "https://github.com/its-mrarsikk/Vencord"
 cd Vencord
 pnpm install --frozen-lockfile
+pnpm build
 Write-Host "HERE CHOOSE THE FIRST OPTION"
 pnpm inject
 Write-Host "now restart discord fully (right click the tray and press quit), go to plugins, find sealion and enable"
