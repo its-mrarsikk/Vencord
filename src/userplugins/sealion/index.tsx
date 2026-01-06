@@ -23,13 +23,18 @@ const imgStyle = {
 };
 
 function Sealion() {
+    const audioRefCallback = useCallback((node) => {
+    if (node !== null) {
+      node.volume = 0.25;
+    }
+  },[]);
     const [render, setRender] = useState(false);
     console.log("sealion rendered");
     useEffect(() => {
         const interval = setInterval(() => {
             const rng = Math.trunc(Math.random() * 1000);
             console.log(rng);
-            if (rng == 1) {
+            if (rng == 67) {
                 setRender(true);
             } else {
                 setRender(false);
@@ -41,14 +46,14 @@ function Sealion() {
     return render ?
         <div style={{ ...divStyle }}>
             <img src={IMAGE} style={imgStyle as any} />
-            <audio autoPlay src={AUDIO} style={{ display: "none" }} />
+            <audio autoPlay src={AUDIO} style={{ display: "none" }} ref={audioRefCallback}/>
         </div> : null;
 }
 
 
 export default definePlugin({
     name: "sealion",
-    description: "sealion",
+    description: "sealion (version for noobs with 0.25 volume)",
     authors: [{ name: "arsikk", id: 9_10_21n }],
     start: () => {
         const container = document.createElement("div");
