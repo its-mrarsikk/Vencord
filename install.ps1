@@ -1,17 +1,17 @@
 if (!Get-Command "pnpm" -ErrorAction SilentlyContinue) {
-    Write-Error "you didnt install pnpm dumbass"
+    Write-Error "go install pnpm"
     Write-Host "https://pnpm.io/installation"
     Pause
     exit 1
 }
 if (!Get-Command "git" -ErrorAction SilentlyContinue) {
-    Write-Error "you didnt install git dumbass"
+    Write-Error "go install git"
     Write-Host "https://git-scm.com/install/windows"
     Pause
     exit 1
 }
 if (!Get-Command "node" -ErrorAction SilentlyContinue) {
-    Write-Error "you didnt install node dumbass"
+    Write-Error "go install node"
     Write-Host "https://nodejs.org/en/download"
     Pause
     exit 1
